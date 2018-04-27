@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Hyperapp Intro</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h1>Hyperapp Intro</h1>
+                </section>
+                <section>
+                    <header>
+                        <h2>Why?</h2>
+                    </header>
+                    <section>
+                        <p class="fragment grow fade-in highlight-red">
+                            Size Matters
+                        </p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                HTML file size
+                            </li>
+                            <li>
+                                JavaScript library file size
+                            </li>
+                            <li>
+                                API size
+                            </li>
+                            <li>
+                                etc...
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Dizzying array of choices
+                        </p>
+                        <a target="_blank" href="https://github.com/krausest/js-framework-benchmark">js-framework-benchmark</a>
+                    </section>
+                    <section>
+                        <p class="fragment fade-in highlight-blue">
+                            Speed Matters
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-in highlight-red">
+                            Time is our enemy
+                        </p>
+                        <p>
+                            Minimize the concepts that need to understand to be productive
+                        </p>
+                    </section>
+                </section>
+				<section>
+                    <h2>The Elm Architecture</h2>
+                    <section>
+                        <ul>
+                            <li>
+                                Model
+                            </li>
+                            <li>
+                                View
+                            </li>
+                            <li>
+                                Update
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <header>
+                            Model
+                        </header>
+                        <p>
+                           Data represents application state
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            View : Model → Html Msg
+                        </header>
+                        <p>
+                            Takes the model and returns UI
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            Update : Msg → Model → Model
+                        </header>
+                        <p>
+                            Takes the model and action apply to that model, returns new model
+                        </p>
+                    </section>
+                    <section>
+                        <a target="_blank" href="http://elm-lang.org/examples/buttons">Elm example : Buttons</a>
+                    </section>
+                    <section>
+                        <p>
+                            View and Update<br>
+                            are<br>
+                            Stateless functions, aka pure functions<br>
+                            Same arguments → same result
+                        </p>
+                        <p class="fragment fade-in">
+                            <a target="_blank" href="http://debug.elm-lang.org/try">Elm’s Time Traveling Debugger</a>
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            Effects as data
+                        </header>
+                        <p class="fragment fade-in">
+                            Effects interact with external state
+                        </p>
+                        <p class="fragment fade-in">
+                            Effect functions are stateful functions
+                        </p>
+                        <a class="fragment fade-in" target="_blank" href="https://guide.elm-lang.org/architecture/effects/">The Elm Architecture + Effects</a>
+                    </section>
+                    <section>
+                        <span class="fragment highlight-red visible">Model</span> is the heart of the application
+                        <p>
+                            Clear Data Model → Clear API
+                        </p>
+                    </section>
+                </section>
+				<section>
+                    <header>
+                        <h2>
+                            Hyperapp
+                        </h2>
+                    </header>
+                    <section>
+                        <ul>
+                            <li>
+                                State
+                            </li>
+                            <li>
+                                View
+                            </li>
+                            <li>
+                                Actions
+                            </li>
+                        </ul>
+                        <p>
+                            <a target="_blank" href="https://codepen.io/jorgebucaran/pen/zNxZLP?editors=0010">Hyperapp example : Counter</a>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            action: data → (state, <span class="fragment highlight-red visible">actions</span>) → state
+                        </p>
+                        <p>
+                            Not 100% pure! naughty~
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <header>
+                        <h2>
+                            Hyperapp 2 Incoming
+                        </h2>
+                    </header>
+                    <section>
+                        <ul>
+                            <li>
+                                Making actions and effects pure
+                            </li>
+                            <li>
+                                Subscriptions — Introduce a subscriptions API inspired by Elm
+                            </li>
+                            <li>
+                                Performance enhancement
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
